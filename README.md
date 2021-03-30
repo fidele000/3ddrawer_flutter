@@ -1,5 +1,5 @@
 # 3D like Drawer Menus in Flutter 
-
+<img src="https://github.com/fidele000/3ddrawer_flutter/blob/master/assets/screenshot.gif" alt="3ddrawer_flutter" width="200" >
 A new Flutter application.
 
 ## Getting Started
