@@ -1,4 +1,3 @@
-import 'package:english_words/english_words.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -24,7 +23,7 @@ class _AppState extends State<App> {
                   gradient: LinearGradient(
                     colors: [
                       Colors.blue,
-                      Colors.blue,
+                      Colors.blue[900],
                     ],
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
@@ -47,9 +46,9 @@ class _AppState extends State<App> {
                     children: [
                       DrawerHeader(child:Column(
                         children: [
-                            CircleAvatar(backgroundColor: Colors.green,radius: 50,),
+                            CircleAvatar(backgroundImage: AssetImage('assets/image.jpg'),radius: 50,),
                             SizedBox(height: 10,),
-                            Expanded(child: Text('Fidele Kirezi Cyisa',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),))
+                            Expanded(child: Text('Fidele',style: TextStyle(color: Colors.white,fontSize: 20,letterSpacing: 2.0),))
                           ],
                         ),
                       ),
@@ -96,17 +95,26 @@ class _AppState extends State<App> {
                             },
                             child: Scaffold(
                               backgroundColor: Colors.blue,
-                              appBar: value==0?AppBar(
-                                title: Text('3D Animation'),
+                              appBar: value!=1?AppBar(
+                                title: Text('3D Transform Animation',
+                                ),
+                                elevation: 1,
+                                backgroundColor: Colors.blue[900],
                           ):null,
                               body: Container(
                                 width: MediaQuery.of(context).size.width,
                                 height: MediaQuery.of(context).size.height,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: value==1?BorderRadius.only(topLeft: Radius.circular(20),bottomLeft: Radius.circular(20)):null,
+                                  borderRadius: value==1?BorderRadius.only(bottomLeft: Radius.circular(20)):null,
                                 ),
-                                child: Center(child: Text('Swipe Right')),
+                                child: Center(child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset('assets/graph.gif'),
+                                    Text("Tap on the image to trigger Menus")
+                                  ],
+                                )),
                               ),
                             ),
                           ),
